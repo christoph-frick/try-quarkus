@@ -15,7 +15,12 @@ public class GreetingResourceTest {
           .when().get("/greeting")
           .then()
              .statusCode(200)
-             .body(is("Hello, Quarkus!"));
+             .body(is("Hello, Quarkus #1 !"));
+        given()
+            .when().get("/greeting")
+            .then()
+                .statusCode(200)
+                .body(is("Hello, Quarkus #2 !"));
     }
 
 }
